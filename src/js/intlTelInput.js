@@ -955,7 +955,7 @@ class Iti {
 
     if (this.options.separateDialCode) {
       const dialCode = (this.selectedCountryData.dialCode) ? `+${this.selectedCountryData.dialCode}` : '';
-      const iso2     = this.selectedCountryData.iso2;
+      const iso2     = this.selectedCountryData.iso2.toUpperCase();
       const parent   = this.telInput.parentNode;
 
       if (prevCountry.dialCode) {

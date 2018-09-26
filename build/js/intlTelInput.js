@@ -909,7 +909,7 @@
                     this.selectedFlag.setAttribute("title", title);
                     if (this.options.separateDialCode) {
                         var dialCode = this.selectedCountryData.dialCode ? "+".concat(this.selectedCountryData.dialCode) : "";
-                        var iso2 = this.selectedCountryData.iso2;
+                        var iso2 = this.selectedCountryData.iso2.toUpperCase();
                         var parent = this.telInput.parentNode;
                         if (prevCountry.dialCode) {
                             parent.classList.remove("iti-sdc-".concat(prevCountry.dialCode.length + 1));
