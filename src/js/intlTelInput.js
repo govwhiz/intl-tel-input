@@ -955,14 +955,16 @@ class Iti {
 
     if (this.options.separateDialCode) {
       const dialCode = (this.selectedCountryData.dialCode) ? `+${this.selectedCountryData.dialCode}` : '';
-      const parent = this.telInput.parentNode;
+      const iso2     = this.selectedCountryData.iso2;
+      const parent   = this.telInput.parentNode;
+
       if (prevCountry.dialCode) {
         parent.classList.remove(`iti-sdc-${prevCountry.dialCode.length + 1}`);
       }
       if (dialCode) {
         parent.classList.add(`iti-sdc-${dialCode.length}`);
       }
-      this.selectedDialCode.innerHTML = dialCode;
+      this.selectedDialCode.innerHTML = iso2 + ' ' + dialCode;
     }
 
     // and the input's placeholder

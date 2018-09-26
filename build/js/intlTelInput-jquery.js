@@ -913,6 +913,7 @@
                 this.selectedFlag.setAttribute("title", title);
                 if (this.options.separateDialCode) {
                     var dialCode = this.selectedCountryData.dialCode ? "+".concat(this.selectedCountryData.dialCode) : "";
+                    var iso2 = this.selectedCountryData.iso2;
                     var parent = this.telInput.parentNode;
                     if (prevCountry.dialCode) {
                         parent.classList.remove("iti-sdc-".concat(prevCountry.dialCode.length + 1));
@@ -920,7 +921,7 @@
                     if (dialCode) {
                         parent.classList.add("iti-sdc-".concat(dialCode.length));
                     }
-                    this.selectedDialCode.innerHTML = dialCode;
+                    this.selectedDialCode.innerHTML = iso2 + " " + dialCode;
                 }
                 // and the input's placeholder
                 this._updatePlaceholder();
